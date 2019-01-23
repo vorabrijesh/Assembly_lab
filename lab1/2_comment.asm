@@ -23,7 +23,7 @@ main:
 	mov	r12d, eax	    ; r12d <- eax; r12d <- 10
 	sub	ebx, r12d		; ebx <- ebx- r12d; ebx<- 20;
 	mov	eax, 0		; eax <- 0
-	pop	rbx			rbx <- stack[top-2] ;
+	pop	rbx			;rbx <- stack[top-2] ;
 	pop	r12d 		;rbx <- stack[top-1] ;
 	pop	rbp			;rbp <- stack[top -0];
 	.cfi_def_cfa 7, 8
