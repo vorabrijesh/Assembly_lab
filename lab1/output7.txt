@@ -1,0 +1,85 @@
+	.file	"pointer.c"		;This is not an instruction
+	.section	.rodata		;This is not an instruction
+.LC0:		;This is not an instruction
+	.string	"%d %d"		;This is not an instruction
+	.text		;This is not an instruction
+	.globl	main		;This is not an instruction
+	.type	main, @function		;This is not an instruction
+main:		;This is not an instruction
+.LFB0:		;This is not an instruction
+	.cfi_startproc		;This is not an instruction
+	pushq	%rbp		;Push quad word
+
+	.cfi_def_cfa_offset 16		;This is not an instruction
+	.cfi_offset 6, -16		;This is not an instruction
+	movq	%rsp, %rbp		;Move Doubleword/Move Quadword
+
+	.cfi_def_cfa_register 6		;This is not an instruction
+	subq	$48, %rsp		;   Subtract quad
+
+	movq	%fs:40, %rax		;Move Doubleword/Move Quadword
+
+	movq	%rax, -8(%rbp)		;Move Doubleword/Move Quadword
+
+	xorl	%eax, %eax		;This is not an instruction
+	movl	$3, -36(%rbp)		;   Move Long word
+
+	movl	$4, -32(%rbp)		;   Move Long word
+
+	leaq	-36(%rbp), %rax		;This is not an instruction
+	movq	%rax, -24(%rbp)		;Move Doubleword/Move Quadword
+
+	leaq	-32(%rbp), %rax		;This is not an instruction
+	movq	%rax, -16(%rbp)		;Move Doubleword/Move Quadword
+
+	movq	-24(%rbp), %rax		;Move Doubleword/Move Quadword
+
+	movl	(%rax), %eax		;   Move Long word
+
+	movl	%eax, -28(%rbp)		;   Move Long word
+
+	movq	-16(%rbp), %rax		;Move Doubleword/Move Quadword
+
+	movl	(%rax), %edx		;   Move Long word
+
+	movq	-24(%rbp), %rax		;Move Doubleword/Move Quadword
+
+	movl	%edx, (%rax)		;   Move Long word
+
+	movq	-16(%rbp), %rax		;Move Doubleword/Move Quadword
+
+	movl	-28(%rbp), %edx		;   Move Long word
+
+	movl	%edx, (%rax)		;   Move Long word
+
+	movl	-32(%rbp), %edx		;   Move Long word
+
+	movl	-36(%rbp), %eax		;   Move Long word
+
+	movl	%eax, %esi		;   Move Long word
+
+	movl	$.LC0, %edi		;   Move Long word
+
+	movl	$0, %eax		;   Move Long word
+
+	call	printf		;Call Procedure
+
+	movl	$0, %eax		;   Move Long word
+
+	movq	-8(%rbp), %rcx		;Move Doubleword/Move Quadword
+
+	xorq	%fs:40, %rcx		;This is not an instruction
+	je	.L3		;This is not an instruction
+	call	__stack_chk_fail		;Call Procedure
+
+.L3:		;This is not an instruction
+	leave		;High Level Procedure Exit
+
+	.cfi_def_cfa 7, 8		;This is not an instruction
+	ret		;Return from Procedure
+
+	.cfi_endproc		;This is not an instruction
+.LFE0:		;This is not an instruction
+	.size	main, .-main		;This is not an instruction
+	.ident	"GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.10) 5.4.0 20160609"		;This is not an instruction
+	.section	.note.GNU-stack,"",@progbits		;This is not an instruction
