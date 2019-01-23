@@ -21,7 +21,7 @@ main:
 	sub	eax, DWORD PTR -28[rbp]	    ; eax <- eax- [rbp-28] ; eax <-10
 	mov	DWORD PTR -20[rbp], eax		; [rbp-20] <- eax ;[rbp-20] <-10
 	mov	eax, DWORD PTR -32[rbp]		; eax <-[rbp-32]	; eax<-20
-	imul	eax, DWORD PTR -28[rbp]	; eax <- eax * [rbp-28] ; eax <-10
+	imul	eax, DWORD PTR -28[rbp]	; eax <- eax * [rbp-28] ; eax <-200
 	mov	DWORD PTR -16[rbp], eax		; -16[rbp]<- eax; -16[rbp] <-20
 	mov	eax, DWORD PTR -32[rbp]		; eax <- -32[rbp]; eax <-20
 	cdq								; convert doubleword to quadword				
