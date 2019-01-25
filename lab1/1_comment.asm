@@ -36,7 +36,7 @@ main:
 	mov	eax, 0				; eax <- 0
 	pop	rbp 				; rbp <- stack[top-0]; 
 	.cfi_def_cfa 7, 8
-	ret
+	ret					; ends the program
 	.cfi_endproc
 .LFE0:
 	.size	main, .-main
